@@ -50,6 +50,7 @@ export default function Shop() {
 
   return (
     <>
+      <h1 className="text-3xl font-bold my-4">Shop</h1>
       <CartBar amount={calculateAmount(cart)} />
       {shopItems.map(
         item => {
