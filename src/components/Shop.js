@@ -8,11 +8,6 @@ function calculateAmount(cart) {
     , 0);
 }
 
-function getItemAmount(cart, id) {
-  const item = cart.find(elem => elem.id === id);
-  return item ? item.id : 0;
-}
-
 const shopItems = [
   {
     id: '0',
