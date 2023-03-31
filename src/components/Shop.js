@@ -8,30 +8,7 @@ function calculateAmount(cart) {
     , 0);
 }
 
-const shopItems = [
-  {
-    id: '0',
-    title: 'Keyboard'
-  },
-  {
-    id: '1',
-    title: 'Mouse'
-  },
-  {
-    id: '2',
-    title: 'Monitor'
-  },
-  {
-    id: '3',
-    title: 'Charging Cable'
-  },
-  {
-    id: '4',
-    title: 'Adapter'
-  }
-]
-
-export default function Shop() {
+export default function Shop({ shopItems }) {
   const [cart, setCart] = useState([]);
 
   function handleCartAdd(amount, id) {
@@ -52,15 +29,18 @@ export default function Shop() {
     <>
       <h1 className="text-3xl font-bold my-4">Shop</h1>
       <CartBar amount={calculateAmount(cart)} />
-      {shopItems.map(
-        item => {
-          return <ShopItem 
-            key={item.id}
-            title={item.title} 
-            id={item.id}
-            onAdd={handleCartAdd}
-            />}
-      )}
+      <ul>
+        {shopItems.map(
+          item => {
+            return <li key={item.id}> 
+                <ShopItem
+                title={item.title}
+                id={item.id}
+                onAdd={handleCartAdd}
+                />
+              </li>}
+        )}
+      </ul>
     </>
   )
 }

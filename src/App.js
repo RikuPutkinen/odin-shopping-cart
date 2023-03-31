@@ -2,6 +2,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import './index.css';
+import shopItems from './shopItems';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <div className="content w-1/2 mx-auto p-6 bg-gray-200">
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/shop' element={<Shop />} />
+          <Route path='/shop' element={<Shop shopItems={shopItems}/>} />
         </Routes>
       </div>
     </>
